@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Submission Form</title>
+
+</head>
+
+<body>
+    <header>
+        <span id="headline">
+            <h1>Form</h1>
+        </span>
+    </header>
+    <h1>Please Log in!</h1>
+    <form id="form">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="email">Email:</label><br>
+      <input type="text" id="email" name="email"><br>
+      <label for="pass">Password:</label><br>
+      <input type="password" id="pwd" name="pwd"><br>
+      <input id="submit" type="submit" value="Submit">
+</form>
+<script src="script.js"></script>
+</body>
+<script>
+document.getElementById("form").addEventListener("submit", function(e) {
+  pass = document.getElementById("pwd").value;
+  if(pass=="12345678"){
+    e.preventDefault();
+    document.getElementsByTagName('h1')[1].innerHTML="Login Successful!"
+  }else{
+    alert("Wrong password");
+  }
+});
+</script>
+</html>
